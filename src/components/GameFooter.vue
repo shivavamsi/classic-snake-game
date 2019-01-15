@@ -1,7 +1,9 @@
 <template>
   <div>
-    <img id="logo" src="../assets/github.png">
-    <p class="about">GitHub</p>
+    <a href="https://github.com/shivavamsi/classic-snake-game">
+      <img id="logo" src="../assets/github.png">
+      <p class="about">GitHub</p>
+    </a>
   </div>
 </template>
 
