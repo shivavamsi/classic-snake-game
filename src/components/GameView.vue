@@ -55,77 +55,57 @@ export default {
   },
   methods: {
     clearCanvas() {
+      // clear the HTML Canvas
       this.gameContext.fillStyle = this.canvasColor;
-      // this.gameContext.strokestyle = this.canvasBorderColor;
-      this.gameContext.fillRect(
-        0,
-        0,
-        this.gameCanvas.width,
-        this.gameCanvas.height
-      );
-      this.gameContext.strokeRect(
-        0,
-        0,
-        this.gameCanvas.width,
-        this.gameCanvas.height
-      );
+      this.gameContext.fillRect(0, 0, this.gameCanvas.width, this.gameCanvas.height);
+      this.gameContext.strokeRect(0, 0, this.gameCanvas.width, this.gameCanvas.height);
     },
     drawSnakePart(snakePart, index) {
-      if (index === 0) {
-        this.gameContext.fillStyle = this.snakeHeadColor;
-      } else {
-        this.gameContext.fillStyle = this.snakeColor;
-      }
-      this.gameContext.strokestyle = this.snakeBorderColor;
+      // draw each part of the snake
 
-      this.gameContext.fillRect(
-        snakePart.x + 0.5,
-        snakePart.y + 0.5,
-        this.pixels,
-        this.pixels
-      );
-      this.gameContext.strokeRect(
-        snakePart.x + 0.5,
-        snakePart.y + 0.5,
-        this.pixels,
-        this.pixels
-      );
+      // set bright color for head
+      if (index === 0) this.gameContext.fillStyle = this.snakeHeadColor;
+      else this.gameContext.fillStyle = this.snakeColor;
+      // fill part
+      this.gameContext.strokestyle = this.snakeBorderColor;
+      // add 0.5 offset
+      this.gameContext.fillRect(snakePart.x + 0.5, snakePart.y + 0.5, this.pixels, this.pixels);
+      this.gameContext.strokeRect(snakePart.x + 0.5, snakePart.y + 0.5, this.pixels, this.pixels);
     },
     drawSnake() {
+      // draw each part of snake body
       this.snake.forEach(this.drawSnakePart);
     },
     drawFood() {
+      // set color for food
       this.gameContext.fillStyle = this.foodColor;
       this.gameContext.strokestyle = this.foodBorderColor;
-      this.gameContext.fillRect(
-        this.gameData.food.x + 0.5,
-        this.gameData.food.y + 0.5,
-        this.pixels,
-        this.pixels
-      );
-      this.gameContext.strokeRect(
-        this.gameData.food.x + 0.5,
-        this.gameData.food.y + 0.5,
-        this.pixels,
-        this.pixels
-      );
+      // draw food
+      this.gameContext.fillRect(this.gameData.food.x + 0.5, this.gameData.food.y + 0.5, this.pixels, this.pixels);
+      this.gameContext.strokeRect(this.gameData.food.x + 0.5, this.gameData.food.y + 0.5, this.pixels, this.pixels);
     },
     init() {
-      this.gameCanvas = this.$refs.gameCanvas;
-      this.gameContext = this.gameCanvas.getContext("2d");
+      // initialize the game board
 
+      // select HTML Canvas from DOM
+      this.gameCanvas = this.$refs.gameCanvas;
+      // create a 2D context for the canvas
+      this.gameContext = this.gameCanvas.getContext("2d");
+      // set width and height of canvas
       this.gameData.width = this.gameCanvas.width;
       this.gameData.height = this.gameCanvas.height;
-
+      // reset all flags
       this.gameOver = false;
       this.gameStarted = false;
       this.isPaused = false;
+      // clear the canvas and draw images
       this.clearCanvas();
       this.drawSnake();
       this.drawFood();
     }
   },
   created() {
+    // listen for events on event bus
     bus.$on("init", this.init);
     bus.$on("clearCanvas", this.clearCanvas);
     bus.$on("drawSnake", this.drawSnake);
@@ -141,6 +121,7 @@ export default {
     });
   },
   mounted() {
+    // initialize the Game View when the Vue instance is mounted
     this.init();
   }
 };

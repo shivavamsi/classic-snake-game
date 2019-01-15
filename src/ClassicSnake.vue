@@ -33,11 +33,8 @@ export default {
         food: ""
       }
     };
-  },
-  methods: {},
-  mounted() {}
+  }
 };
 </script>
-
 <style>
 </style>
