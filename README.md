@@ -2,7 +2,7 @@
 
 #### Demo: <https://shivavamsi.github.io/classic-snake-game/>
 
-Read more about the game on [Wikipedia](https://en.wikipedia.org/wiki/Pig_(dice_game)
+Read more about the game on [Wikipedia](https://en.wikipedia.org/wiki/Pig_(dice_game))
 
 ## Description
 
