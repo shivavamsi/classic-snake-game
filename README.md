@@ -33,7 +33,7 @@ This web application allows the solo player to play classic Snake Game
 
 - _To preview locally, navigate to the project directory in terminal and run the following command_  `npm run serve`
 - _[Node.js](https://nodejs.org/en/) and [Vue CLI](https://cli.vuejs.org/guide/installation.html) are prerequisites to preview locally_
-- _To deploy to GitHub pages, navigate to the directory, update the name of repository and run the deploy.sh script_  `./deploy.sh`
+- _To deploy to GitHub pages, navigate to the directory, update the name of GitHub repository in deploy.sh and run the script_  `./deploy.sh`
 - _Read more about deploying a Vue.js Application in the official [Vue.js Guide](https://cli.vuejs.org/guide/deployment.html#github-pages)_
 
 #### App Model
