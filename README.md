@@ -2,7 +2,7 @@
 
 #### Demo: <https://shivavamsi.github.io/classic-snake-game/>
 
-Read more about the game on [Wikipedia](https://en.wikipedia.org/wiki/Pig_(dice_game))
+Read more about the game on [Wikipedia](https://en.wikipedia.org/wiki/Snake_(video_game_genre))
 
 ## Description
 
@@ -28,6 +28,13 @@ This web application allows the solo player to play classic Snake Game
 -   _Used Event bus to communicate events_
 -   _Used Refs to access DOM elements_
 -   _Initialized the game during the "mounted" stage of Vue Instance Life Cycle_
+
+#### Deployment
+
+- _To preview locally, navigate to the project directory in terminal and run the following command_  `npm run serve`
+- _[Node.js](https://nodejs.org/en/) and [Vue CLI](https://cli.vuejs.org/guide/installation.html) are prerequisites to preview locally_
+- _To deploy to GitHub pages, navigate to the directory and run the deploy.sh script_  `./deploy.sh`
+- _Read more about deploying a Vue.js Application in the official [Vue.js Guide](https://cli.vuejs.org/guide/deployment.html#github-pages)_
 
 #### App Model
                                             Main.js
